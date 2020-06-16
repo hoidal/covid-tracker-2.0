@@ -1,14 +1,15 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
 
 import NationalSummaryPage from './NationalSummaryPage';
 
 function App() {
   return (
-    <div className="App">
+    <Container className="App">
       <NationalSummaryPage />
-    </div>
+    </Container>
   );
 }
 

@@ -1,26 +1,31 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
 
-function CurrentSummaryTable({ data }) {
-    const totalDeaths = data.death ? data.death : '-';
-    const totalRecovered = data.recovered ? data.recovered : '-';
-    const currentCritical = data.inIcuCurrently ? data.inIcuCurrently : '-';
-    const totalConfirmedCases = data.positive ? data.positive : '-';
-    const totalTested = data.totalTestResults ? data.totalTestResults : '-';
-    const newCases = data.positiveIncrease ? data.positiveIncrease : '-';
-    const newDeaths = data.deathIncrease ? data.deathIncrease : '-';
-    const dataDate = data.date ? data.date : '';
+import { formatNum, formatDate } from './formatters';
 
+function CurrentSummaryTable({ data }) {
+    const totalDeaths = data.death ? formatNum(data.death) : '-';
+    const totalRecovered = data.recovered ? formatNum(data.recovered) : '-';
+    const currentCritical = data.inIcuCurrently ? formatNum(data.inIcuCurrently) : '-';
+    const totalConfirmedCases = data.positive ? formatNum(data.positive) : '-';
+    const totalTested = data.totalTestResults ? formatNum(data.totalTestResults) : '-';
+    const newCases = data.positiveIncrease ? formatNum(data.positiveIncrease) : '-';
+    const newDeaths = data.deathIncrease ? formatNum(data.deathIncrease) : '-';
+    const dataUpdateDate = data.date ? formatDate(data.date) : '';
+
+    // cell styling for new cases and deaths in table
+    const newCasesCellStyle = newCases !== '-' ? {background: "#ffffcc"} : null;
+    const newDeathsCellStyle = newDeaths !== '-' ? {background: "red"} : null;
 
     return (
         <div>
-             <h1>Current Totals</h1>
+            <h1>Current Totals</h1>
             <Table striped bordered>
                 <thead>
                     <tr>
                         <th>New Cases</th>
                         <th>New Deaths</th>
-                        <th>Current Critical</th>
+                        <th>Critical Condition</th>
                         <th>Total Cases</th>
                         <th>Total Deaths</th>
                         <th>Total Tested</th>
@@ -29,8 +34,8 @@ function CurrentSummaryTable({ data }) {
                 </thead>
                 <tbody>
                     <tr>
-                        <td>{newCases}</td>
-                        <td>{newDeaths}</td>
+                        <td style={newCasesCellStyle}>{newCases}</td>
+                        <td style={newDeathsCellStyle}>{newDeaths}</td>
                         <td>{currentCritical}</td>
                         <td>{totalConfirmedCases}</td>
                         <td>{totalDeaths}</td>
@@ -39,6 +44,9 @@ function CurrentSummaryTable({ data }) {
                     </tr>
                 </tbody>
             </Table>
+            <footer style={{textAlign: "right"}}>
+                {dataUpdateDate}
+            </footer>
         </div>
     )
 }

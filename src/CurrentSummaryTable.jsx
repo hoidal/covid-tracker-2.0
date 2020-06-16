@@ -11,15 +11,14 @@ function CurrentSummaryTable({ data }) {
     const totalTested = data.totalTestResults ? formatNum(data.totalTestResults) : '-';
     const newCases = data.positiveIncrease ? formatNum(data.positiveIncrease) : '-';
     const newDeaths = data.deathIncrease ? formatNum(data.deathIncrease) : '-';
-    const dataUpdateDate = data.date ? formatDate(data.date) : '';
+    const dataUpdateDate = data.date ? `Last Updated: ${formatDate(data.date)}` : '';
 
     // cell styling for new cases and deaths in table
     const newCasesCellStyle = newCases !== '-' ? {background: "#ffffcc"} : null;
     const newDeathsCellStyle = newDeaths !== '-' ? {background: "red"} : null;
-
     return (
         <div>
-            <h1>Current Totals</h1>
+            <h3>Current Totals</h3>
             <Table striped bordered>
                 <thead>
                     <tr>

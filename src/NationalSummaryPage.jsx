@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import CurrentSummaryTable from './CurrentSummaryTable';
+import ConfirmedCasesGraph from './ConfirmedTotalCasesGraph';
 
 const nationalCurrentSummaryURL = 'https://covidtracking.com/api/v1/us/current.json';
 const nationalHistoricalDataURL = 'https://covidtracking.com/api/v1/us/daily.json';
@@ -31,7 +32,8 @@ class NationalSummaryPage extends Component {
     render() {
         return (
             <div>
-                <CurrentSummaryTable data={this.state.nationalCurrentDataSummary}/>
+                <CurrentSummaryTable data={this.state.nationalCurrentDataSummary} />
+                <ConfirmedCasesGraph data={this.state.nationalHistoricalDataSummary} />
             </div>
         )
     }

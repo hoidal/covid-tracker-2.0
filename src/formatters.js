@@ -23,5 +23,5 @@ export function formatDate(num) {
         '12': 'December'
     };
 
-    return `Last Updated: ${monthHash[month]} ${day}, ${year}`;
+    return `${monthHash[month]} ${day}, ${year}`;
 }

@@ -9,8 +9,8 @@ function CurrentSummaryTable({ data }) {
     const currentCritical = data.inIcuCurrently ? formatNum(data.inIcuCurrently) : '-';
     const totalConfirmedCases = data.positive ? formatNum(data.positive) : '-';
     const totalTested = data.totalTestResults ? formatNum(data.totalTestResults) : '-';
-    const newCases = data.positiveIncrease ? formatNum(data.positiveIncrease) : '-';
-    const newDeaths = data.deathIncrease ? formatNum(data.deathIncrease) : '-';
+    const newCases = data.positiveIncrease ? `+${formatNum(data.positiveIncrease)}` : '-';
+    const newDeaths = data.deathIncrease ? `+${formatNum(data.deathIncrease)}` : '-';
     const dataUpdateDate = data.date ? `Last Updated: ${formatDate(data.date)}` : '';
 
     // cell styling for new cases and deaths in table

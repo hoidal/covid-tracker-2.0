@@ -1,7 +1,7 @@
-import React, { useMemo, useState, useEffect } from 'react';
+import React, { useMemo } from 'react';
 import DataTable from './DataTable';
 
-import { formatNum, formatDate, getStateName } from '../helper-functions/formatters';
+import { formatNum, getStateName } from '../helper-functions/formatters';
 
 function StateDataTable({ data }) {
 
@@ -18,12 +18,12 @@ function StateDataTable({ data }) {
             {
                 Header: 'New Cases', 
                 accessor: 'positiveIncrease', 
-                Cell: props => `+${formatNum(props.value)}`
+                Cell: props => props.value > 0 ? `+${formatNum(props.value)}` : props.value
             },
             {
                 Header: 'New Deaths', 
-                accessor: 'deathIncrease', 
-                Cell: props => `+${formatNum(props.value)}`
+                accessor: 'deathIncrease',
+                Cell: props => props.value > 0 ? `+${formatNum(props.value)}` : props.value
             },
             {
                 Header: 'Total Cases', 
@@ -53,7 +53,6 @@ function StateDataTable({ data }) {
         ],
         []
     );
-
 
     return (
         <DataTable columns={columns} data={formattedData} />

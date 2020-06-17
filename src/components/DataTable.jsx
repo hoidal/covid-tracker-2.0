@@ -19,7 +19,7 @@ function DataTable({ columns, data }) {
     );
 
     return (
-        <Table striped bordered {...getTableProps()}>
+        <Table  bordered {...getTableProps()}>
             <thead>
                 {headerGroups.map(headerGroup => (
                     <tr {...headerGroup.getHeaderGroupProps()}>
@@ -41,7 +41,18 @@ function DataTable({ columns, data }) {
                         <tr {...row.getRowProps()}>
                             {row.cells.map(cell => {
                                 return (
-                                    <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                                    <td 
+                                        style={
+                                            cell.column.Header === 'New Deaths' && cell.value > 0 
+                                                ? {background: 'red'} 
+                                                : cell.column.Header === 'New Cases' && cell.value > 0
+                                                    ? {background: '#ffffcc'}
+                                                    : null
+                                        }
+                                        {...cell.getCellProps()}
+                                    >
+                                        {cell.render('Cell')}
+                                    </td>
                                 );
                             })}
                         </tr>

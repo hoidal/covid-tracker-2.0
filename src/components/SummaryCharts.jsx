@@ -26,7 +26,7 @@ function SummaryCharts({ data }) {
             <div>
                 <h5>Total Cases</h5>
                 <BarChart width={500} height={250} data={formattedGraphData}>
-                    <CartesianGrid strokeDasharray="3 3" />
+                    <CartesianGrid strokeDasharray="3" vertical={false}/>
                     <XAxis dataKey="date" />
                     <YAxis width={80} tickFormatter={tick => tick.toLocaleString()}/>
                     <Tooltip formatter={(data, name) => [formatNum(data), "Total Cases"]}/>
@@ -36,7 +36,7 @@ function SummaryCharts({ data }) {
             <div>
                 <h5>Total Deaths</h5>
                 <BarChart width={500} height={250} data={filteredDeathData}>
-                    <CartesianGrid strokeDasharray="3 3" />
+                    <CartesianGrid strokeDasharray="3" vertical={false}/>
                     <XAxis dataKey="date" />
                     <YAxis width={80} tickFormatter={tick => tick.toLocaleString()}/>
                     <Tooltip formatter={(data, name) => [formatNum(data), "Total Deaths"]} />

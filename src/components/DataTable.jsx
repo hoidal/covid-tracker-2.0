@@ -13,7 +13,10 @@ function DataTable({ columns, data }) {
     } = useTable(
         {
             columns,
-            data
+            data,
+            initialState: {
+                sortBy: [{ id: 'positiveIncrease', desc: true }]
+            }
         },
         useSortBy
     );
@@ -44,9 +47,9 @@ function DataTable({ columns, data }) {
                                     <td 
                                         style={
                                             cell.column.Header === 'New Deaths' && cell.value > 0 
-                                                ? {background: 'red'} 
+                                                ? {background: 'red', fontWeight: 'bold'} 
                                                 : cell.column.Header === 'New Cases' && cell.value > 0
-                                                    ? {background: '#ffffcc'}
+                                                    ? {background: '#ffffcc', fontWeight: 'bold'}
                                                     : null
                                         }
                                         {...cell.getCellProps()}

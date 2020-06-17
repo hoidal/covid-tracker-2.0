@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import { CartesianGrid, XAxis, YAxis, Tooltip, BarChart, Bar, Legend } from 'recharts';
+import { CartesianGrid, XAxis, YAxis, Tooltip, BarChart, Bar } from 'recharts';
 import { formatNum, formatDate } from './formatters';
 
 function SummaryCharts({ data }) {
@@ -28,7 +28,7 @@ function SummaryCharts({ data }) {
                 <BarChart width={500} height={250} data={formattedGraphData}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="date" />
-                    <YAxis width={80}/>
+                    <YAxis width={80} tickFormatter={tick => tick.toLocaleString()}/>
                     <Tooltip formatter={(data, name) => [formatNum(data), "Total Cases"]}/>
                     <Bar dataKey="totalCases" fill="#8884d8" />
                 </BarChart>
@@ -38,7 +38,7 @@ function SummaryCharts({ data }) {
                 <BarChart width={500} height={250} data={filteredDeathData}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="date" />
-                    <YAxis width={80}/>
+                    <YAxis width={80} tickFormatter={tick => tick.toLocaleString()}/>
                     <Tooltip formatter={(data, name) => [formatNum(data), "Total Deaths"]} />
                     <Bar dataKey="totalDeaths" fill="red" />
                 </BarChart>

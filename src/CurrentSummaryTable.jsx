@@ -24,22 +24,22 @@ function CurrentSummaryTable({ data }) {
                     <tr>
                         <th>New Cases</th>
                         <th>New Deaths</th>
-                        <th>Critical Condition</th>
                         <th>Total Cases</th>
                         <th>Total Deaths</th>
-                        <th>Total Tested</th>
+                        <th>Current Critical Patients</th>
                         <th>Total Recovered</th>
+                        <th>Total Tested</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td style={newCasesCellStyle}>{newCases}</td>
                         <td style={newDeathsCellStyle}>{newDeaths}</td>
-                        <td>{currentCritical}</td>
                         <td>{totalConfirmedCases}</td>
                         <td>{totalDeaths}</td>
-                        <td>{totalTested}</td>
+                        <td>{currentCritical}</td>
                         <td>{totalRecovered}</td>
+                        <td>{totalTested}</td>
                     </tr>
                 </tbody>
             </Table>

@@ -3,12 +3,12 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 
-import NationalSummaryPage from './NationalSummaryPage';
+import USSummaryPage from './USSummaryPage';
 
 function App() {
   return (
     <Container className="App">
-      <NationalSummaryPage />
+      <USSummaryPage />
     </Container>
   );
 }

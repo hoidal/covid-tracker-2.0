@@ -1,5 +1,5 @@
 export function formatNum(num) {
-    return num.toLocaleString();
+    return num !== null ? num.toLocaleString() : '-';
 }
 
 export function formatDate(num) {

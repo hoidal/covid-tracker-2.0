@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Table from 'react-bootstrap/Table';
 import { useTable, useSortBy } from "react-table";
 
@@ -24,17 +24,11 @@ function DataTable({ columns, data }) {
                 {headerGroups.map(headerGroup => (
                     <tr {...headerGroup.getHeaderGroupProps()}>
                         {headerGroup.headers.map(column => (
-                            <th
-                                {...column.getHeaderProps(column.getSortByToggleProps())}
-                                className={
-                                    column.isSorted
-                                    ? column.isSortedDesc
-                                        ? 'sort-desc'
-                                        : 'sort-asc'
-                                    : ''
-                                }
-                            >
+                            <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                                 {column.render('Header')}
+                                <span>
+                                    {column.isSorted ? (column.isSortedDesc ? '🔽' : '🔼') : ''}
+                                </span>
                             </th>
                         ))}
                     </tr>

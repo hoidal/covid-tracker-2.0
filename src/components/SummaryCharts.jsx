@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.css';
+import '../App.css';
 
 import { CartesianGrid, XAxis, YAxis, Tooltip, BarChart, Bar } from 'recharts';
-import { formatNum, formatDate } from './formatters';
+import { formatNum, formatDate } from '../helper-functions/formatters';
 
 function SummaryCharts({ data }) {
 

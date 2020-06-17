@@ -1,7 +1,7 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
 
-import { formatNum, formatDate } from './formatters';
+import { formatNum, formatDate } from '../helper-functions/formatters';
 
 function CurrentSummaryTable({ data }) {
     const totalDeaths = data.death ? formatNum(data.death) : '-';

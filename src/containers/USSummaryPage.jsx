@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import CurrentSummaryTable from './CurrentSummaryTable';
-import SummaryCharts from './SummaryCharts';
-import StateDataTable from './StateDataTable';
+import CurrentSummaryTable from '../components/CurrentSummaryTable';
+import SummaryCharts from '../components/SummaryCharts';
+import StateDataTable from '../components/StateDataTable';
 
 const nationalCurrentSummaryURL = 'https://covidtracking.com/api/v1/us/current.json';
 const nationalHistoricalDataURL = 'https://covidtracking.com/api/v1/us/daily.json';

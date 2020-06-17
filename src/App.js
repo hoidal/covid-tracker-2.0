@@ -3,7 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 
-import USSummaryPage from './USSummaryPage';
+import USSummaryPage from './containers/USSummaryPage';
 
 function App() {
   return (

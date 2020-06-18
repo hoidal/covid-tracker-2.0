@@ -13,7 +13,8 @@ function StateDataTable({ data }) {
         () => [
             {
                 Header: 'State', 
-                accessor: 'stateName'
+                accessor: 'stateName',
+                Cell: props => <a href={`/state/${props.value.replace(/\s/g, '').toLowerCase()}`}>{props.value}</a>
             },
             {
                 Header: 'New Cases', 
@@ -54,6 +55,7 @@ function StateDataTable({ data }) {
         []
     );
 
+    console.log(columns)
     return (
         <DataTable 
             columns={columns} 

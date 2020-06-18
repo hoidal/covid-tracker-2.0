@@ -22,7 +22,7 @@ function DataTable({ columns, data }) {
     );
 
     return (
-        <Table  bordered {...getTableProps()}>
+        <Table style={{marginTop: '3rem'}} bordered {...getTableProps()}>
             <thead>
                 {headerGroups.map(headerGroup => (
                     <tr {...headerGroup.getHeaderGroupProps()}>
@@ -30,7 +30,7 @@ function DataTable({ columns, data }) {
                             <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                                 {column.render('Header')}
                                 <span>
-                                    {column.isSorted ? (column.isSortedDesc ? '🔽' : '🔼') : ''}
+                                    {column.isSorted ? (column.isSortedDesc ? ' ↓' : ' ↑') : ''}
                                 </span>
                             </th>
                         ))}

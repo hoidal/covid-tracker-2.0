@@ -8,6 +8,7 @@
 #chart-container {
   margin-top: 2rem;
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-evenly;
 }
 

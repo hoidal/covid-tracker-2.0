@@ -13,6 +13,7 @@ function SummaryCharts({ data }) {
             totalCases: dailyData.positive,
             newDeaths: dailyData.deathIncrease,
             totalDeaths: dailyData.death
+            
         }
         return formattedData;
     });
@@ -41,6 +42,26 @@ function SummaryCharts({ data }) {
                     <YAxis width={80} tickFormatter={tick => tick.toLocaleString()}/>
                     <Tooltip formatter={(data, name) => [formatNum(data), "Total Deaths"]} />
                     <Bar dataKey="totalDeaths" fill="red" />
+                </BarChart>
+            </div>
+            <div>
+                <h5>Daily Cases</h5>
+                <BarChart width={500} height={250} data={filteredDeathData}>
+                    <CartesianGrid strokeDasharray="3" vertical={false}/>
+                    <XAxis dataKey="date" />
+                    <YAxis width={80} tickFormatter={tick => tick.toLocaleString()}/>
+                    <Tooltip formatter={(data, name) => [formatNum(data), "Daily Cases"]} />
+                    <Bar dataKey="newCases" fill="#8884d8" />
+                </BarChart>
+            </div>
+            <div>
+                <h5>Daily Deaths</h5>
+                <BarChart width={500} height={250} data={filteredDeathData}>
+                    <CartesianGrid strokeDasharray="3" vertical={false}/>
+                    <XAxis dataKey="date" />
+                    <YAxis width={80} tickFormatter={tick => tick.toLocaleString()}/>
+                    <Tooltip formatter={(data, name) => [formatNum(data), "New Deaths"]} />
+                    <Bar dataKey="newDeaths" fill="red" />
                 </BarChart>
             </div>
         </div>

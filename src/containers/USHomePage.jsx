@@ -33,6 +33,9 @@ class NationalSummaryPage extends Component {
     render() {
         return (
             <div>
+                 <div style={{height: '4rem', padding: '1rem'}}>
+                    <h2>U.S. COVID-19 Data</h2>
+                </div>
                 <CurrentSummaryTable data={this.state.nationalCurrentDataSummary} />
                 <SummaryCharts data={this.state.nationalHistoricalDataSummary} />
                 <StateDataTable data={this.state.stateCurrentDataSummary} />

@@ -18,7 +18,6 @@ function CurrentSummaryTable({ data }) {
     const newDeathsCellStyle = newDeaths !== '-' ? {background: "red"} : null;
     return (
         <div>
-            <h3>Current Totals</h3>
             <Table striped bordered>
                 <thead>
                     <tr>

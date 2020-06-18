@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
 
 import Container from 'react-bootstrap/Container';
 import USHomePage from './containers/USHomePage';

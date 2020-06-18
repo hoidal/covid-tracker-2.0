@@ -22,7 +22,7 @@ function DataTable({ columns, data }) {
     );
 
     return (
-        <Table style={{marginTop: '3rem'}} bordered {...getTableProps()}>
+        <Table style={{marginTop: '1rem'}} bordered {...getTableProps()}>
             <thead>
                 {headerGroups.map(headerGroup => (
                     <tr {...headerGroup.getHeaderGroupProps()}>

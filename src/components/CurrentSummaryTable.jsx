@@ -18,6 +18,9 @@ function CurrentSummaryTable({ data }) {
     const newDeathsCellStyle = newDeaths !== '-' ? {background: "red"} : null;
     return (
         <div>
+            <header style={{textAlign: "right"}}>
+                {dataUpdateDate}
+            </header>
             <Table striped bordered>
                 <thead>
                     <tr>
@@ -42,9 +45,6 @@ function CurrentSummaryTable({ data }) {
                     </tr>
                 </tbody>
             </Table>
-            <footer style={{textAlign: "right"}}>
-                {dataUpdateDate}
-            </footer>
         </div>
     )
 }

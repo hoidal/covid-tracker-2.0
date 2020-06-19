@@ -15,7 +15,7 @@ function NewsContainer({ data }) {
         return recentNews.sort((a, b) => a.heat - b.heat).map((article, i) => {
             return (
                 <Card key={i}>
-                    <Card.Img variant="top" src={article.images[0].url}/>
+                    <Card.Img variant="top" src={article.images ? article.images[0].url : null}/>
                     <Card.Body>
                         <Card.Title>{article.title}</Card.Title>
                         <Card.Text>{article.excerpt}</Card.Text>
@@ -30,7 +30,7 @@ function NewsContainer({ data }) {
     }
 
     const newsCards = createNewsCards(recentNews);
-    console.log(recentNews)
+    
     return (
         <Card style={{padding: '2rem'}}>
             {newsHeader}

@@ -13,7 +13,7 @@ function App() {
   return (
     <Fragment>
       <MainNavBar />
-      <Container className="App">
+      <Container>
         <Switch>
           <Route exact path='/' component={USHomePage} />
           <Route exact path='/state/:stateName' component={StateHomePage} />

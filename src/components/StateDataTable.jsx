@@ -55,7 +55,6 @@ function StateDataTable({ data }) {
         []
     );
 
-    console.log(columns)
     return (
         <DataTable 
             columns={columns} 

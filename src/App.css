@@ -1,4 +1,4 @@
-.App {
+.container {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -6,6 +6,7 @@
   align-items: center;
 }
 
+/* card for data charts */
 #chart-container {
   margin-top: 2rem;
   display: flex;
@@ -13,6 +14,7 @@
   justify-content: space-evenly;
 }
 
+/* nav tabs for chart selection */
 .nav-tabs {
   justify-content: center;
 }

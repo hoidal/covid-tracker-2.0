@@ -10,7 +10,6 @@ import { formatNum, formatDate } from '../helper-functions/formatters';
 
 function SummaryCharts({ data }) {
 
-    console.log(data)
     const formattedGraphData = data.reverse().map(dailyData => {
         const formattedData = {
             date: formatDate(dailyData.date),
@@ -23,10 +22,6 @@ function SummaryCharts({ data }) {
         }
         return formattedData;
     });
-
-    const filteredDeathData = formattedGraphData.filter(dailyData => {
-        return dailyData.totalDeaths;
-    })
 
     return (
         <Card>
@@ -42,7 +37,7 @@ function SummaryCharts({ data }) {
                         </BarChart>
                     </Tab>
                     <Tab eventKey="daily-cases" title="Daily Cases">
-                        <BarChart width={1000} height={250} style={{margin: '1rem'}} data={filteredDeathData}>
+                        <BarChart width={1000} height={250} style={{margin: '1rem'}} data={formattedGraphData}>
                             <CartesianGrid strokeDasharray="3" vertical={false}/>
                             <XAxis dataKey="date" />
                             <YAxis width={80} tickFormatter={tick => tick.toLocaleString()}/>
@@ -51,7 +46,7 @@ function SummaryCharts({ data }) {
                         </BarChart>
                     </Tab>
                     <Tab eventKey="total-deaths" title="Total Deaths">
-                        <BarChart width={1000} height={250} style={{margin: '1rem'}} data={filteredDeathData}>
+                        <BarChart width={1000} height={250} style={{margin: '1rem'}} data={formattedGraphData}>
                             <CartesianGrid strokeDasharray="3" vertical={false}/>
                             <XAxis dataKey="date" />
                             <YAxis width={80} tickFormatter={tick => tick.toLocaleString()}/>
@@ -60,7 +55,7 @@ function SummaryCharts({ data }) {
                         </BarChart>
                     </Tab>
                     <Tab eventKey="daily-deaths" title="Daily Deaths">
-                        <BarChart width={1000} height={250} style={{margin: '1rem'}} data={filteredDeathData}>
+                        <BarChart width={1000} height={250} style={{margin: '1rem'}} data={formattedGraphData}>
                             <CartesianGrid strokeDasharray="3" vertical={false}/>
                             <XAxis dataKey="date" />
                             <YAxis width={80} tickFormatter={tick => tick.toLocaleString()}/>
@@ -69,7 +64,7 @@ function SummaryCharts({ data }) {
                         </BarChart>
                     </Tab>
                     <Tab eventKey="total-recoveries" title="Total Recovered">
-                        <BarChart width={1000} height={250} style={{margin: '1rem'}} data={filteredDeathData}>
+                        <BarChart width={1000} height={250} style={{margin: '1rem'}} data={formattedGraphData}>
                             <CartesianGrid strokeDasharray="3" vertical={false}/>
                             <XAxis dataKey="date" />
                             <YAxis width={80} tickFormatter={tick => tick.toLocaleString()}/>
@@ -78,7 +73,7 @@ function SummaryCharts({ data }) {
                         </BarChart>
                     </Tab>
                     <Tab eventKey="total-test-results" title="Total Tested">
-                        <BarChart width={1000} height={250} style={{margin: '1rem'}} data={filteredDeathData}>
+                        <BarChart width={1000} height={250} style={{margin: '1rem'}} data={formattedGraphData}>
                             <CartesianGrid strokeDasharray="3" vertical={false}/>
                             <XAxis dataKey="date" />
                             <YAxis width={80} tickFormatter={tick => tick.toLocaleString()}/>

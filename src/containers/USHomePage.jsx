@@ -37,7 +37,7 @@ class NationalSummaryPage extends Component {
                     <h2>U.S. COVID-19 Data</h2>
                 </div>
                 <CurrentSummaryTable data={this.state.nationalCurrentDataSummary} />
-                <SummaryCharts data={this.state.nationalHistoricalDataSummary} />
+                <SummaryCharts data={this.state.nationalHistoricalDataSummary.reverse()} />
                 <StateDataTable data={this.state.stateCurrentDataSummary} />
             </div>
         )

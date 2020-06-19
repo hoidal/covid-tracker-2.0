@@ -30,15 +30,19 @@ function NewsContainer({ data }) {
     }
 
     const newsCards = createNewsCards(recentNews);
-    
+    console.log(data)
     return (
-        <Card style={{padding: '2rem'}}>
-            {newsHeader}
-            <CardColumns>
-                {newsCards}
-            </CardColumns>
-        </Card>
-    )
+        recentNews
+        ? null
+        : (
+            <Card style={{padding: '2rem'}}>
+                {newsHeader}
+                <CardColumns>
+                    {newsCards}
+                </CardColumns>
+            </Card>
+        )
+    );
 }
 
 export default NewsContainer;

@@ -1,20 +1,28 @@
 import React from 'react';
+import { newsDateFormatter } from '../helper-functions/formatters';
 
 import Card from 'react-bootstrap/Card';
-import CardColumns from 'react-bootstrap/CardColumns';
+import Masonry from 'react-masonry-component';
 
 function NewsContainer({ data }) {
     
-    const stateName = data.location ? data.location.provinceOrState : null;
+    const locale = (
+        data.location 
+        ? data.location.provinceOrState 
+            ? data.location.provinceOrState
+            : 'U.S.'
+        : null
+    );
+
+    const newsHeader = locale ? <h3>{`Recent ${locale} COVID-19 News`}</h3> : null;
+
     const recentNews = data.news ? data.news : null;
-    
-    const newsHeader = stateName ? <h3>{`Recent ${stateName} COVID-19 News`}</h3> : null;
 
     const createNewsCards = recentNews => {
         if(!recentNews || recentNews.length === 0) return null;
         return recentNews.sort((a, b) => a.heat - b.heat).map((article, i) => {
             return (
-                <Card key={i}>
+                <Card key={i} style={{width: '20rem', margin: '0.5rem'}}>
                     <Card.Img variant="top" src={article.images ? article.images[0].url : null}/>
                     <Card.Body>
                         <Card.Title>{article.title}</Card.Title>
@@ -22,7 +30,10 @@ function NewsContainer({ data }) {
                         <a href={article.webUrl}>Read More...</a>
                     </Card.Body>
                     <Card.Footer>
-                        <small className="text-muted">{article.provider.name}</small>
+                        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                            <small className="text-muted">{article.provider.name}</small>
+                            <small className="text-muted">{newsDateFormatter(article.publishedDateTime)}</small>
+                        </div>
                     </Card.Footer>
                 </Card>
             );
@@ -30,19 +41,15 @@ function NewsContainer({ data }) {
     }
 
     const newsCards = createNewsCards(recentNews);
-    console.log(data)
+
     return (
-        recentNews
-        ? null
-        : (
-            <Card style={{padding: '2rem'}}>
-                {newsHeader}
-                <CardColumns>
-                    {newsCards}
-                </CardColumns>
-            </Card>
-        )
-    );
+        <Card style={{padding: '2rem', alignContent: 'center'}}>
+            {newsHeader}
+            <Masonry>
+                {newsCards}
+            </Masonry>
+        </Card>
+    )
 }
 
 export default NewsContainer;

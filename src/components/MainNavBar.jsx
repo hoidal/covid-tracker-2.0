@@ -25,7 +25,6 @@ function MainNavBar() {
     return (
         <Navbar bg="dark" variant="dark">
             <Navbar.Brand>COVID-19 TRACKING PROJECT</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Nav className="mr-auto">
                 <Nav.Link href="/">HOME</Nav.Link>
                 <NavDropdown title="SELECT STATE" id="basic-nav-dropdown">
@@ -33,8 +32,6 @@ function MainNavBar() {
                         {stateNavLinks}
                     </div>
                 </NavDropdown>
-                <Nav.Link href="">RESOURCES</Nav.Link>
-                <Nav.Link href="">NEWS</Nav.Link>
             </Nav>
         </Navbar>
     )

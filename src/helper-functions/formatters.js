@@ -209,4 +209,28 @@ export const STATE_ARRAY = [
     'Wyoming'
 ];
 
+export function newsDateFormatter(date) {
+    if(date === null) return null;
+
+    const year = date.substring(0, 4);
+    const month = date.substring(5, 7);
+    const day = date.substring(8, 10);
+
+    const monthHash = {
+        '01': 'January',
+        '02': 'February',
+        '03': 'March',
+        '04': 'April',
+        '05': 'May',
+        '06': 'June',
+        '07': 'July',
+        '08': 'August',
+        '09': 'September',
+        '10': 'October',
+        '11': 'November',
+        '12': 'December'
+    };
+
+    return `${monthHash[month]} ${day}, ${year}`;
+}
 

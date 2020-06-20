@@ -1,1 +1,1 @@
-https://covid-19-tracking-project.web.app/
+https://covid-19-tracking-project.firebaseapp.com/

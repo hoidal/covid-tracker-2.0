@@ -10,7 +10,7 @@ import { formatNum, formatDate } from '../helper-functions/formatters';
 
 function SummaryCharts({ data }) {
 
-    const formattedGraphData = data.reverse().map(dailyData => {
+    const formattedGraphData = data.map(dailyData => {
         const formattedData = {
             date: formatDate(dailyData.date),
             newCases: dailyData.positiveIncrease,

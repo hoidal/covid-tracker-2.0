@@ -46,7 +46,7 @@ class StateHomePage extends Component {
             <div>
                 <StateHeader stateName={this.state.stateName} info={this.state.stateMetaData} />
                 <CurrentSummaryTable data={this.state.stateCurrentSummaryData} />
-                <SummaryCharts data={this.state.stateHistoricalDataSummary.reverse()} />
+                <SummaryCharts data={this.state.stateHistoricalDataSummary.sort((a, b) => a.date - b.date)} />
                 <NewsContainer data={this.state.newsData} />
             </div>
         )

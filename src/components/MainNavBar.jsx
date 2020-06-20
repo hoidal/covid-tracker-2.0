@@ -14,7 +14,7 @@ function MainNavBar() {
         return (
             <NavDropdown.Item 
                 key={stateLinkFormat} 
-                href={`http://localhost:3000/state/${stateLinkFormat}`}
+                href={`https://covid-19-tracking-project.web.app/state/${stateLinkFormat}`}
                 style={{width: '15rem'}}
             >
                 {state}

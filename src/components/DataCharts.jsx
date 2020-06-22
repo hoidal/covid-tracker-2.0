@@ -26,16 +26,7 @@ function DataCharts({ data }) {
     return (
         <Card className={styles.chartContainer}>
             <Card.Body>
-                <Tabs defaultActiveKey="total-cases" className={styles.chartNavTabs}>
-                    <Tab eventKey="total-cases" title="Total Cases">
-                        <BarChart width={1000} height={400} margin={{top: 50, right: 0, bottom: 10, left: 10}} data={formattedGraphData}>
-                            <CartesianGrid strokeDasharray="3" vertical={false}/>
-                            <XAxis dataKey="date" />
-                            <YAxis width={100} tickFormatter={tick => tick.toLocaleString()}/>
-                            <Tooltip formatter={(data, name) => [formatNum(data), "Total Cases"]}/>
-                            <Bar dataKey="totalCases" fill="#8884d8" />
-                        </BarChart>
-                    </Tab>
+                <Tabs defaultActiveKey="daily-cases" className={styles.chartNavTabs}>
                     <Tab eventKey="daily-cases" title="Daily Cases">
                         <BarChart width={1000} height={400} margin={{top: 50, right: 0, bottom: 10, left: 10}} data={formattedGraphData}>
                             <CartesianGrid strokeDasharray="3" vertical={false}/>
@@ -45,13 +36,13 @@ function DataCharts({ data }) {
                             <Bar dataKey="newCases" fill="#8884d8" />
                         </BarChart>
                     </Tab>
-                    <Tab eventKey="total-deaths" title="Total Deaths">
+                    <Tab eventKey="total-cases" title="Total Cases">
                         <BarChart width={1000} height={400} margin={{top: 50, right: 0, bottom: 10, left: 10}} data={formattedGraphData}>
                             <CartesianGrid strokeDasharray="3" vertical={false}/>
                             <XAxis dataKey="date" />
                             <YAxis width={100} tickFormatter={tick => tick.toLocaleString()}/>
-                            <Tooltip formatter={(data, name) => [formatNum(data), "Total Deaths"]} />
-                            <Bar dataKey="totalDeaths" fill="#f93e3e" />
+                            <Tooltip formatter={(data, name) => [formatNum(data), "Total Cases"]}/>
+                            <Bar dataKey="totalCases" fill="#8884d8" />
                         </BarChart>
                     </Tab>
                     <Tab eventKey="daily-deaths" title="Daily Deaths">
@@ -61,6 +52,15 @@ function DataCharts({ data }) {
                             <YAxis width={100} tickFormatter={tick => tick.toLocaleString()}/>
                             <Tooltip formatter={(data, name) => [formatNum(data), "Daily Deaths"]} />
                             <Bar dataKey="newDeaths" fill="#f93e3e" />
+                        </BarChart>
+                    </Tab>
+                    <Tab eventKey="total-deaths" title="Total Deaths">
+                        <BarChart width={1000} height={400} margin={{top: 50, right: 0, bottom: 10, left: 10}} data={formattedGraphData}>
+                            <CartesianGrid strokeDasharray="3" vertical={false}/>
+                            <XAxis dataKey="date" />
+                            <YAxis width={100} tickFormatter={tick => tick.toLocaleString()}/>
+                            <Tooltip formatter={(data, name) => [formatNum(data), "Total Deaths"]} />
+                            <Bar dataKey="totalDeaths" fill="#f93e3e" />
                         </BarChart>
                     </Tab>
                     <Tab eventKey="total-recoveries" title="Total Recovered">

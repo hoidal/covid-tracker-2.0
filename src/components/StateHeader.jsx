@@ -9,7 +9,7 @@ function StateHeader({ stateName, info, news }) {
 
     return (
         <div className={styles.stateHeaderContainer}>
-            <h2>{name}</h2>
+            <h2 className={styles.stateNameHeader}>{name}</h2>
             {stateWebsite}<br/>
             {linkToLocalNews}
         </div>

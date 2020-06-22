@@ -2,3 +2,7 @@
     height: 6rem;
     padding: 1rem;
 }
+
+.headerTitle {
+    font-weight: bold;
+}

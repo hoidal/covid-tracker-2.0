@@ -51,7 +51,7 @@ function DataCharts({ data }) {
                             <XAxis dataKey="date" />
                             <YAxis width={100} tickFormatter={tick => tick.toLocaleString()}/>
                             <Tooltip formatter={(data, name) => [formatNum(data), "Total Deaths"]} />
-                            <Bar dataKey="totalDeaths" fill="red" />
+                            <Bar dataKey="totalDeaths" fill="#f93e3e" />
                         </BarChart>
                     </Tab>
                     <Tab eventKey="daily-deaths" title="Daily Deaths">
@@ -60,7 +60,7 @@ function DataCharts({ data }) {
                             <XAxis dataKey="date" />
                             <YAxis width={100} tickFormatter={tick => tick.toLocaleString()}/>
                             <Tooltip formatter={(data, name) => [formatNum(data), "Daily Deaths"]} />
-                            <Bar dataKey="newDeaths" fill="red" />
+                            <Bar dataKey="newDeaths" fill="#f93e3e" />
                         </BarChart>
                     </Tab>
                     <Tab eventKey="total-recoveries" title="Total Recovered">
@@ -69,7 +69,7 @@ function DataCharts({ data }) {
                             <XAxis dataKey="date" />
                             <YAxis width={100} tickFormatter={tick => tick.toLocaleString()}/>
                             <Tooltip formatter={(data, name) => [formatNum(data), "Total Recovered"]} />
-                            <Bar dataKey="recovered" fill="#f93e3e" />
+                            <Bar dataKey="recovered" fill="#82ca9d" />
                         </BarChart>
                     </Tab>
                     <Tab eventKey="total-test-results" title="Total Tested">
@@ -78,7 +78,7 @@ function DataCharts({ data }) {
                             <XAxis dataKey="date" />
                             <YAxis width={100} tickFormatter={tick => tick.toLocaleString()}/>
                             <Tooltip formatter={(data, name) => [formatNum(data), "Total Test Results"]} />
-                            <Bar dataKey="totalTestResults" fill="#f93e3e" />
+                            <Bar dataKey="totalTestResults" fill="#82ca9d" />
                         </BarChart>
                     </Tab>
                 </Tabs>

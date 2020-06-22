@@ -233,4 +233,3 @@ export function newsDateFormatter(date) {
 
     return `${monthHash[month]} ${day}, ${year}`;
 }
-

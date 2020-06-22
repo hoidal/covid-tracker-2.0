@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './DataTable.module.css';
 import Table from 'react-bootstrap/Table';
 import { useTable, useSortBy } from "react-table";
 
@@ -22,7 +23,7 @@ function DataTable({ columns, data }) {
     );
 
     return (
-        <Table style={{marginTop: '1rem'}} bordered {...getTableProps()}>
+        <Table className={styles.table} bordered {...getTableProps()}>
             <thead>
                 {headerGroups.map(headerGroup => (
                     <tr {...headerGroup.getHeaderGroupProps()}>
@@ -47,7 +48,7 @@ function DataTable({ columns, data }) {
                                     <td 
                                         style={
                                             cell.column.Header === 'New Deaths' && cell.value > 0 
-                                                ? {background: 'red', fontWeight: 'bold'} 
+                                                ? {background: 'red', fontWeight: 'bold'}
                                                 : cell.column.Header === 'New Cases' && cell.value > 0
                                                     ? {background: '#ffffcc', fontWeight: 'bold'}
                                                     : null

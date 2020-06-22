@@ -58,7 +58,7 @@ function StateDataTable({ data }) {
     return (
         <DataTable 
             columns={columns} 
-            data={formattedData} 
+            data={formattedData}
         />
     )
 }

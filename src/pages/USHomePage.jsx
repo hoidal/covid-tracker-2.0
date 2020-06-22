@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import styles from './USHomePage.module.css';
 
-import CurrentSummaryTable from '../components/CurrentSummaryTable';
-import SummaryCharts from '../components/SummaryCharts';
+import SummaryTable from '../components/SummaryTable';
+import DataCharts from '../components/DataCharts';
 import StateDataTable from '../components/StateDataTable';
 import NewsContainer from '../components/NewsContainer';
 
@@ -13,7 +14,7 @@ const COVID_NEWS_URL = 'https://api.smartable.ai/coronavirus/news/US';
 const NEWS_API_HEADER = {
     headers: {
       'Subscription-Key': 'a3d734750927483ea4040506f463681e'
-    },
+    }
 };
 
 class NationalSummaryPage extends Component {
@@ -43,15 +44,15 @@ class NationalSummaryPage extends Component {
 
     render() {
         return (
-            <div>
-                 <div style={{height: '4rem', padding: '1rem'}}>
-                    <h2>U.S. COVID-19 Data</h2>
+            <Fragment>
+                <div className={styles.titleContainer}>
+                    <h2>U.S. COVID-19 Summary</h2>
                 </div>
-                <CurrentSummaryTable data={this.state.nationalCurrentDataSummary} />
-                <SummaryCharts data={this.state.nationalHistoricalDataSummary.sort((a, b) => a.date - b.date)} />
+                <SummaryTable data={this.state.nationalCurrentDataSummary} />
+                <DataCharts data={this.state.nationalHistoricalDataSummary.sort((a, b) => a.date - b.date)} />
                 <StateDataTable data={this.state.stateCurrentDataSummary} />
                 <NewsContainer data={this.state.newsData} />
-            </div>
+            </Fragment>
         )
     }
 }

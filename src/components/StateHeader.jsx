@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './StateHeader.module.css';
 
 function StateHeader({ stateName, info }) {
 
@@ -6,7 +7,7 @@ function StateHeader({ stateName, info }) {
     const stateWebsite = info.covid19Site ? <a href={info.covid19Site}>Official State Website</a> : null;
 
     return (
-        <div style={{height: '6rem', padding: '1rem'}}>
+        <div className={styles.stateHeaderContainer}>
             <h2>{name}</h2>
             {stateWebsite}
         </div>

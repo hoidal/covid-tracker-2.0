@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+import styles from './MainNavBar.module.css';
 
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -14,8 +14,8 @@ function MainNavBar() {
         return (
             <NavDropdown.Item 
                 key={stateLinkFormat} 
-                href={`https://covid-19-tracking-project.web.app/state/${stateLinkFormat}`}
-                style={{width: '15rem'}}
+                href={`/state/${stateLinkFormat}`}
+                className={styles.stateNavDropdownItem}
             >
                 {state}
             </NavDropdown.Item>
@@ -28,7 +28,7 @@ function MainNavBar() {
             <Nav className="mr-auto">
                 <Nav.Link href="/">HOME</Nav.Link>
                 <NavDropdown title="SELECT STATE" id="basic-nav-dropdown">
-                    <div style={{width: '50vw', display: 'flex', flexWrap: 'wrap'}}>
+                    <div className={styles.stateNavDropdownContainer}>
                         {stateNavLinks}
                     </div>
                 </NavDropdown>

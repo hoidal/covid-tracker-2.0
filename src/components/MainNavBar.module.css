@@ -1,0 +1,9 @@
+.stateNavDropdownContainer {
+    width: 50vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stateNavDropdownItem {
+    width: 15rem;
+}

@@ -1,0 +1,17 @@
+.newsContainer {
+    width: 100%;
+    padding: 2rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.newsCard {
+    width: 30%;
+    margin: 1.6%;
+}
+
+.newsCardFooterInfo {
+    display: flex;
+    justify-content: space-between;
+}

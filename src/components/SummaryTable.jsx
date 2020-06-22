@@ -1,9 +1,10 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
+import styles from './SummaryTable.module.css';
 
 import { formatNum, formatDate } from '../helper-functions/formatters';
 
-function CurrentSummaryTable({ data }) {
+function SummaryTable({ data }) {
     const totalDeaths = data.death ? formatNum(data.death) : '-';
     const totalRecovered = data.recovered ? formatNum(data.recovered) : '-';
     const currentCritical = data.inIcuCurrently ? formatNum(data.inIcuCurrently) : '-';
@@ -18,9 +19,9 @@ function CurrentSummaryTable({ data }) {
     const newDeathsCellStyle = newDeaths !== '-' ? {background: "red"} : null;
     return (
         <div>
-            <header style={{textAlign: "right"}}>
+            <div className={styles.dateUpdatedLabel}>
                 {dataUpdateDate}
-            </header>
+            </div>
             <Table striped bordered>
                 <thead>
                     <tr>
@@ -49,4 +50,4 @@ function CurrentSummaryTable({ data }) {
     )
 }
 
-export default CurrentSummaryTable;
+export default SummaryTable;

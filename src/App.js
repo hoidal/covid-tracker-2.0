@@ -6,8 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Container from 'react-bootstrap/Container';
 import MainNavBar from './components/MainNavBar';
-import USHomePage from './containers/USHomePage';
-import StateHomePage from './containers/StateHomePage';
+import USHomePage from './pages/USHomePage';
+import StateHomePage from './pages/StateHomePage';
 
 function App() {
   return (

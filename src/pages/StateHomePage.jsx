@@ -42,12 +42,15 @@ class StateHomePage extends Component {
     }
 
     render() {
+        const newsContainer = this.state.newsData.location ? <NewsContainer data={this.state.newsData}/> : null;
+        const hasLocalNews = this.state.newsData.location ? true : false;
+
         return (
             <Fragment>
-                <StateHeader stateName={this.state.stateName} info={this.state.stateMetaData} />
+                <StateHeader stateName={this.state.stateName} info={this.state.stateMetaData} news={hasLocalNews} />
                 <SummaryTable data={this.state.stateCurrentSummaryData} />
                 <DataCharts data={this.state.stateHistoricalDataSummary.sort((a, b) => a.date - b.date)} />
-                {this.state.newsData.location ? <NewsContainer data={this.state.newsData}/> : null}
+                {newsContainer}
             </Fragment>
         )
     }

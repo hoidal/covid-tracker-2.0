@@ -51,7 +51,7 @@ function NewsContainer({ data }) {
     const newsCards = createNewsCards(recentNews);
   
     return (
-        <Card className={styles.newsContainer}>
+        <Card id="newsSection" className={styles.newsContainer}>
             {newsHeader}
             <Masonry>
                 {newsCards}

@@ -47,6 +47,7 @@ class NationalSummaryPage extends Component {
             <Fragment>
                 <div className={styles.titleContainer}>
                     <h2>U.S. COVID-19 Summary</h2>
+                    <a href="#newsSection">Recent COVID-19 News</a>
                 </div>
                 <SummaryTable data={this.state.nationalCurrentDataSummary} />
                 <DataCharts data={this.state.nationalHistoricalDataSummary.sort((a, b) => a.date - b.date)} />

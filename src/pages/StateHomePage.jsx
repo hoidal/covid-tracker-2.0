@@ -42,9 +42,15 @@ class StateHomePage extends Component {
     }
 
     render() {
-        const newsContainer = this.state.newsData.location ? <NewsContainer data={this.state.newsData}/> : null;
+        const newsContainer = (
+            this.state.newsData.news 
+            ? this.state.newsData.news.length === 0 
+                ? null
+                : <NewsContainer data={this.state.newsData}/> 
+            : null
+        );
         const hasLocalNews = this.state.newsData.location ? true : false;
-
+        console.log(this.state.newsData)
         return (
             <Fragment>
                 <StateHeader stateName={this.state.stateName} info={this.state.stateMetaData} news={hasLocalNews} />

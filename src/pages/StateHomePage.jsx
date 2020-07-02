@@ -49,8 +49,7 @@ class StateHomePage extends Component {
                 : <NewsContainer data={this.state.newsData}/> 
             : null
         );
-        const hasLocalNews = this.state.newsData.location ? true : false;
-        console.log(this.state.newsData)
+        const hasLocalNews = this.state.newsData.location ? this.state.newsData.news : null;
         return (
             <Fragment>
                 <StateHeader stateName={this.state.stateName} info={this.state.stateMetaData} news={hasLocalNews} />

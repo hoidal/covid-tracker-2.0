@@ -6,7 +6,7 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 
 import { ResponsiveContainer, CartesianGrid, XAxis, YAxis, Tooltip, BarChart, Bar } from 'recharts';
-import { formatNum, formatDate } from '../helper-functions/formatters';
+import { formatNum, formatDate } from '../../util/formatters';
 
 function DataCharts({ data }) {
 

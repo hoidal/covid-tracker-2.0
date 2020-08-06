@@ -3,7 +3,7 @@ import styles from './NewsContainer.module.css';
 import Card from 'react-bootstrap/Card';
 import Masonry from 'react-masonry-component';
 
-import { newsDateFormatter } from '../helper-functions/formatters';
+import { newsDateFormatter } from '../../util/formatters';
 
 function NewsContainer({ data }) {
     

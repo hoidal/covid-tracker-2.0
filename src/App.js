@@ -5,7 +5,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Container from 'react-bootstrap/Container';
-import MainNavBar from './components/MainNavBar';
+import MainNavBar from './components/nav-bar/MainNavBar';
 import USHomePage from './pages/USHomePage';
 import StateHomePage from './pages/StateHomePage';
 

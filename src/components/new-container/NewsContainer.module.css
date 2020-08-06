@@ -14,7 +14,14 @@
     margin-bottom: .5%;
 }
 
+@media(max-width: 800px) {
+    .newsCard {
+        width: 100%;
+    }
+}
+
 .newsCardFooterInfo {
     display: flex;
     justify-content: space-between;
 }
+

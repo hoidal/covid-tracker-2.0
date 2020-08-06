@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import styles from './USHomePage.module.css';
 
-import SummaryTable from '../components/SummaryTable';
-import DataCharts from '../components/DataCharts';
-import StateDataTable from '../components/StateDataTable';
-import NewsContainer from '../components/NewsContainer';
+import SummaryTable from '../components/summary-table/SummaryTable';
+import DataCharts from '../components/data-chart/DataCharts';
+import StateDataTable from '../components/data-table/StateDataTable';
+import NewsContainer from '../components/new-container/NewsContainer';
 
 const US_COVID_SUMMARY_URL = 'https://covidtracking.com/api/v1/us/current.json';
 const US_DAILY_COVID_URL = 'https://covidtracking.com/api/v1/us/daily.json';

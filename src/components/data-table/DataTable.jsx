@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './DataTable.module.css';
 import Table from 'react-bootstrap/Table';
-import { useTable, useSortBy } from "react-table";
+import { useTable, useSortBy } from 'react-table';
 
 function DataTable({ columns, data }) {
 

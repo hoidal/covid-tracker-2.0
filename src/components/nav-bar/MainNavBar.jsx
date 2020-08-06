@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-import { STATE_ARRAY } from '../helper-functions/formatters';
+import { STATE_ARRAY } from '../../util/formatters';
 
 function MainNavBar() {
 

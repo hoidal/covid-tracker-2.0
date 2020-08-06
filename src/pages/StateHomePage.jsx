@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react'
-import StateHeader from '../components/StateHeader';
-import SummaryTable from '../components/SummaryTable';
-import DataCharts from '../components/DataCharts';
-import NewsContainer from '../components/NewsContainer';
+import StateHeader from '../components/state-header/StateHeader';
+import SummaryTable from '../components/summary-table/SummaryTable';
+import DataCharts from '../components/data-chart/DataCharts';
+import NewsContainer from '../components/new-container/NewsContainer';
 
-import { getStateAbbr, getStateName } from '../helper-functions/formatters';
+import { getStateAbbr, getStateName } from '../util/formatters';
 
 class StateHomePage extends Component {
 

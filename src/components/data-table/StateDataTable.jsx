@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import DataTable from './DataTable';
 
-import { formatNum, getStateName } from '../helper-functions/formatters';
+import { formatNum, getStateName } from '../../util/formatters';
 
 function StateDataTable({ data }) {
 

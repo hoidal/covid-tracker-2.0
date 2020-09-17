@@ -35,23 +35,20 @@ class NationalSummaryPage extends Component {
       fetch(PROXY_URL + US_COVID_SUMMARY_URL),
       fetch(PROXY_URL + US_DAILY_COVID_URL),
       fetch(PROXY_URL + STATE_COVID_SUMMARY_URL),
-      fetch(COVID_NEWS_URL, NEWS_API_HEADER),
     ])
-      .then(([res1, res2, res3, res4]) =>
-        Promise.all([res1.json(), res2.json(), res3.json(), res4.json()])
+      .then(([res1, res2, res3]) =>
+        Promise.all([res1.json(), res2.json(), res3.json()])
       )
-      .then(([data1, data2, data3, data4]) =>
+      .then(([data1, data2, data3]) =>
         this.setState({
           nationalCurrentDataSummary: data1[0],
           nationalHistoricalDataSummary: data2,
           stateCurrentDataSummary: data3,
-          newsData: data4,
         })
       );
   }
 
   render() {
-    console.log(this.state.newsData);
     return (
       <Fragment>
         <div className={styles.titleContainer}>
@@ -69,7 +66,7 @@ class NationalSummaryPage extends Component {
           )}
         />
         <StateDataTable data={this.state.stateCurrentDataSummary} />
-        <NewsContainer data={this.state.newsData} />
+        {/* <NewsContainer data={this.state.newsData} /> */}
       </Fragment>
     );
   }

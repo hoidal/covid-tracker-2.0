@@ -11,11 +11,14 @@ const US_COVID_SUMMARY_URL = "https://covidtracking.com/api/v1/us/current.json";
 const US_DAILY_COVID_URL = "https://covidtracking.com/api/v1/us/daily.json";
 const STATE_COVID_SUMMARY_URL =
   "https://covidtracking.com/api/v1/states/current.json";
-const COVID_NEWS_URL = "https://api.smartable.ai/coronavirus/news/US";
+const COVID_NEWS_URL =
+  "https://coronavirus-smartable.p.rapidapi.com/news/v1/US/";
 
 const NEWS_API_HEADER = {
+  method: "GET",
   headers: {
-    "Subscription-Key": "a3d734750927483ea4040506f463681e",
+    "x-rapidapi-host": "coronavirus-smartable.p.rapidapi.com",
+    "x-rapidapi-key": "12a72ce0f2msh0976a364b297dc5p16772fjsn899b3a1eec06",
   },
 };
 
@@ -32,7 +35,7 @@ class NationalSummaryPage extends Component {
       fetch(PROXY_URL + US_COVID_SUMMARY_URL),
       fetch(PROXY_URL + US_DAILY_COVID_URL),
       fetch(PROXY_URL + STATE_COVID_SUMMARY_URL),
-      fetch(PROXY_URL + COVID_NEWS_URL, NEWS_API_HEADER),
+      fetch(COVID_NEWS_URL, NEWS_API_HEADER),
     ])
       .then(([res1, res2, res3, res4]) =>
         Promise.all([res1.json(), res2.json(), res3.json(), res4.json()])
@@ -48,6 +51,7 @@ class NationalSummaryPage extends Component {
   }
 
   render() {
+    console.log(this.state.newsData);
     return (
       <Fragment>
         <div className={styles.titleContainer}>
